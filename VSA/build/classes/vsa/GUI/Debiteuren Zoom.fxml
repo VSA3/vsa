@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Bestand">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Instellingen" />
+                  <MenuItem mnemonicParsing="false" text="Administratie Laden" />
+                  <MenuItem mnemonicParsing="false" text="Administratie Opslaan" />
+                  <MenuItem mnemonicParsing="false" text="Backup Maken" />
+                  <MenuItem mnemonicParsing="false" text="Backup Maken &amp; Mailen" />
+                  <MenuItem mnemonicParsing="false" text="Printer Instellingen" />
+                  <MenuItem mnemonicParsing="false" text="Programma Sluiten" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Artikelen">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Artikelen Overzicht" />
+                  <MenuItem mnemonicParsing="false" text="Artikelen Toevoegen" />
+                  <MenuItem mnemonicParsing="false" text="Artikelen Verwijderen" />
+                  <MenuItem mnemonicParsing="false" text="Artikelgroepen" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Namen">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Afleveradressen" />
+                  <MenuItem mnemonicParsing="false" text="Debiteuren" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Orders">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Orders" />
+                  <MenuItem mnemonicParsing="false" text="Facturen" />
+                  <MenuItem mnemonicParsing="false" text="Order History" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Printen">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Printers" />
+                  <MenuItem mnemonicParsing="false" text="Facturen" />
+                  <Menu mnemonicParsing="false" text="Productielijsten">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Baklijst" />
+                        <MenuItem mnemonicParsing="false" text="Productielijst productieafdeling" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Verdeellijsten">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                    </items>
+                  </Menu>
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Help" />
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ToolBar prefHeight="0.0" prefWidth="600.0">
+              <items>
+                <Button mnemonicParsing="false" text="X" />
+                  <Button mnemonicParsing="false" text="+" />
+                  <Button mnemonicParsing="false" text="^" />
+                  <Button mnemonicParsing="false" text="-" />
+                  <Button mnemonicParsing="false" text="|&lt;" />
+                  <Button mnemonicParsing="false" text="&lt;&lt;" />
+                  <Button mnemonicParsing="false" text="&gt;&gt;" />
+                  <Button mnemonicParsing="false" text="&gt;|" />
+              </items>
+            </ToolBar>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="2.0" prefWidth="128.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="668.0" minWidth="0.0" prefWidth="173.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="827.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="765.0" minWidth="10.0" prefWidth="25.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="857.0" minWidth="10.0" prefWidth="847.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Debiteur">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nummer" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Naam" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Voorvoegsel / Zoekcode" GridPane.rowIndex="3" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField prefHeight="25.0" prefWidth="43.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" text="Sluiten" GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
+               </children>
+            </GridPane>
+            <GridPane>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adres Informatie">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adres" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Postcode / Plaats" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Land" GridPane.rowIndex="3" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Telefoonnummer" GridPane.rowIndex="4" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fax / GSM" GridPane.rowIndex="5" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" text="Zoeken op Maps" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="2.0" prefWidth="128.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="668.0" minWidth="0.0" prefWidth="173.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="827.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="765.0" minWidth="10.0" prefWidth="25.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="857.0" minWidth="10.0" prefWidth="847.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <GridPane layoutX="10.0" layoutY="165.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Internet">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Website" GridPane.rowIndex="2" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="2.0" prefWidth="128.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="668.0" minWidth="0.0" prefWidth="173.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="827.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="765.0" minWidth="10.0" prefWidth="25.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="857.0" minWidth="10.0" prefWidth="847.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <TabPane prefHeight="394.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Facturatie">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="1280.0" />
+                  </content>
+                </Tab>
+                <Tab text="Afleveradressen">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                  <Tab text="Facturen">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="1280.0" />
+                     </content>
+                  </Tab>
+                  <Tab text="Kladblok">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="1280.0">
+                           <children>
+                              <TextArea prefHeight="320.0" prefWidth="1280.0" />
+                              <Button layoutY="320.0" mnemonicParsing="false" text="Notitie Opslaan" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <ToolBar prefHeight="19.0" prefWidth="1280.0">
+               <items>
+                  <TextField promptText="DAG" text="DAG + GETAL" />
+                  <TextField text="MAAND" />
+                  <TextField text="WEEK + GETAL" />
+                  <TextField text="SYSTEEM TIJD" />
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
