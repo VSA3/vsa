@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vsa.GUI.ArtikelOverzichtFXController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Bestand">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Instellingen" />
+                  <MenuItem mnemonicParsing="false" text="Administratie Laden" />
+                  <MenuItem mnemonicParsing="false" text="Administratie Opslaan" />
+                  <MenuItem mnemonicParsing="false" text="Backup Maken" />
+                  <MenuItem mnemonicParsing="false" text="Backup Maken &amp; Mailen" />
+                  <MenuItem mnemonicParsing="false" text="Printer Instellingen" />
+                  <MenuItem mnemonicParsing="false" text="Programma Sluiten" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Artikelen">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Artikelen Overzicht" />
+                  <MenuItem mnemonicParsing="false" text="Artikelen Toevoegen" />
+                  <MenuItem mnemonicParsing="false" text="Artikelen Verwijderen" />
+                  <MenuItem mnemonicParsing="false" text="Artikelgroepen" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Namen">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Afleveradressen" />
+                  <MenuItem mnemonicParsing="false" text="Debiteuren" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Orders">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Orders" />
+                  <MenuItem mnemonicParsing="false" text="Facturen" />
+                  <MenuItem mnemonicParsing="false" text="Order History" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Printen">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Printers" />
+                  <MenuItem mnemonicParsing="false" text="Facturen" />
+                  <Menu mnemonicParsing="false" text="Productielijsten">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Baklijst" />
+                        <MenuItem mnemonicParsing="false" text="Productielijst productieafdeling" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Verdeellijsten">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                    </items>
+                  </Menu>
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Help" />
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ToolBar prefHeight="0.0" prefWidth="600.0">
+              <items>
+                <Button mnemonicParsing="false" text="X" />
+                  <Button mnemonicParsing="false" text="+" />
+                  <Button mnemonicParsing="false" text="^" />
+                  <Button mnemonicParsing="false" text="-" />
+                  <Button mnemonicParsing="false" text="|&lt;" />
+                  <Button mnemonicParsing="false" text="&lt;&lt;" />
+                  <Button mnemonicParsing="false" text="&gt;&gt;" />
+                  <Button mnemonicParsing="false" text="&gt;|" />
+              </items>
+            </ToolBar>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="88.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="440.0" minWidth="0.0" prefWidth="152.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="727.0" minWidth="0.0" prefWidth="29.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1016.0" minWidth="0.0" prefWidth="466.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1016.0" minWidth="10.0" prefWidth="546.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Volgorde" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Filter" GridPane.rowIndex="1" />
+                  <ComboBox prefWidth="150.0" promptText="orders op Ordernr" GridPane.columnIndex="1" />
+                  <ComboBox prefWidth="150.0" promptText="Jaar en week (omgekeerd)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField GridPane.columnIndex="2" />
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Selecteren" GridPane.columnIndex="4" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Sluiten" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <TableView prefHeight="646.0" prefWidth="1280.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+            <ToolBar prefHeight="19.0" prefWidth="1280.0">
+               <items>
+                  <TextField promptText="DAG" text="DAG + GETAL" />
+                  <TextField text="MAAND" />
+                  <TextField text="WEEK + GETAL" />
+                  <TextField text="SYSTEEM TIJD" />
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

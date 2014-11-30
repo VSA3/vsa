@@ -20,4 +20,19 @@ public class FacturatieGroep
     {
         this.nummer = nummer;
     }
+    
+    public int facturatieNummer()
+    {
+        return this.nummer;
+    }
+    
+    public String facturatieNaam()
+    {
+        return this.naam;
+    }
+    
+    public String facturatieZoekCode()
+    {
+        return this.zoekcode;
+    }
 }

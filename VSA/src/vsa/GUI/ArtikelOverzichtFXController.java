@@ -6,17 +6,11 @@
 
 package vsa.GUI;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import static javafx.application.ConditionalFeature.FXML;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.fxml.JavaFXBuilderFactory;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -28,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author Michael
  */
-public class MainFXController implements Initializable
+public class ArtikelOverzichtFXController implements Initializable
 {
     @FXML private MenuBar main_menubar;
     @FXML private Menu artikelen_menu;
@@ -73,39 +67,8 @@ public class MainFXController implements Initializable
         
     }
     
-    public void openArtikelMenu(ActionEvent event) throws IOException
+    public void openArtikelMenu(ActionEvent event)
     {
-        URL location1 = ArtikelOverzichtFXController.class.getResource("ArtikelOverzicht.fxml");
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(location1);
-        fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
-        root = (Parent)(Node)fxmlLoader.load(location1.openStream());
 
-        ArtikelOverzichtFXController ctrl1 = (ArtikelOverzichtFXController) fxmlLoader.getController();  
-
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
-               
-        //show the stage
-        stage.showAndWait();
-    }
-    
-    public void openArtikelToevoegenMenu(ActionEvent event) throws IOException
-    {
-        URL location1 = ArtikelToevoegenFXController.class.getResource("ArtikelToevoegen.fxml");
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(location1);
-        fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
-        root = (Parent)(Node)fxmlLoader.load(location1.openStream());
-
-        ArtikelToevoegenFXController ctrl1 = (ArtikelToevoegenFXController) fxmlLoader.getController();  
-
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
-               
-        //show the stage
-        stage.showAndWait();
     }
 }

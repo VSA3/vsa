@@ -27,9 +27,14 @@ public class Debiteur
     private FacturatieGroep facturatiegroep;
     private ArrayList<Factuur> facturen;
     
-    public Debiteur(int nummer)
+    public Debiteur(String naam, String plaats, String postcode, String adres, String telefoon1, int betalingstermijn)
     {
-        this.nummer = nummer;
+        this.naam = naam;
+        this.plaats = plaats;
+        this.postcode = postcode;
+        this.adres = adres;
+        this.telefoon1 = telefoon1;
+        this.betalingstermijn = betalingstermijn;
         this.debiteurnummeradministratie = nummer;
         facturen = new ArrayList();
     }

@@ -7,6 +7,7 @@
 package vsa.domain;
 
 import java.io.Serializable;
+import javafx.beans.Observable;
 
 /**
  *

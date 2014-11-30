@@ -30,6 +30,9 @@ public class VSA extends Application{
     {
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         
+        MainFXController fx = new MainFXController();
+        fx.setData();
+        
         Scene scene = new Scene(root);
         
         stage.setScene(scene);

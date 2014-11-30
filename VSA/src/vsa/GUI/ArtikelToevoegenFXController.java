@@ -6,29 +6,28 @@
 
 package vsa.GUI;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import static javafx.application.ConditionalFeature.FXML;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.fxml.JavaFXBuilderFactory;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import vsa.domain.Administratie;
 
 /**
  *
  * @author Michael
  */
-public class MainFXController implements Initializable
+public class ArtikelToevoegenFXController implements Initializable
 {
     @FXML private MenuBar main_menubar;
     @FXML private Menu artikelen_menu;
@@ -55,6 +54,26 @@ public class MainFXController implements Initializable
     @FXML private MenuItem namen_debiteuren;
     
     @FXML private MenuItem orders_orders;
+    
+    @FXML private Text text_artikel_nummer;
+    @FXML private Text text_artikel_omschrijving;
+    @FXML private Text text_artikel_korteomschrijving;
+    @FXML private Text text_artikel_artikelgroep;
+    @FXML private Text text_artikel_ingagsdatum;
+    @FXML private Text text_artikel_einddatum;
+    
+    @FXML private TextField textfield_artikel_nummer;
+    @FXML private TextField textfield_artikel_omschrijving;
+    @FXML private TextField textfield_artikel_korteomschrijving;
+    @FXML private TextField textfield_artikel_artikelgroep;
+    @FXML private TextField textfield_artikel_artikelgroepzoeken;
+    
+    @FXML private DatePicker datepicker_artikel_ingangsdatum;
+    @FXML private DatePicker datepicker_artikel_einddatum;
+    
+    @FXML private RadioButton radiobutton_artikel_nul;
+    @FXML private RadioButton radiobutton_artikel_laag;
+    @FXML private RadioButton radiobutton_artikel_hoog;
 
     private Parent root;
     private Scene scene;
@@ -62,50 +81,26 @@ public class MainFXController implements Initializable
     private Scene currentscene;
     private Stage currentstage;
     
+    private Administratie administratie;
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {
         
     }
     
-    public void setData()
+    public void setData(Administratie administratie)
+    {
+        this.administratie = administratie;
+    }
+    
+    public void openArtikelMenu(ActionEvent event)
+    {
+
+    }
+    
+    public void artikelToevoegen()
     {
         
-    }
-    
-    public void openArtikelMenu(ActionEvent event) throws IOException
-    {
-        URL location1 = ArtikelOverzichtFXController.class.getResource("ArtikelOverzicht.fxml");
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(location1);
-        fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
-        root = (Parent)(Node)fxmlLoader.load(location1.openStream());
-
-        ArtikelOverzichtFXController ctrl1 = (ArtikelOverzichtFXController) fxmlLoader.getController();  
-
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
-               
-        //show the stage
-        stage.showAndWait();
-    }
-    
-    public void openArtikelToevoegenMenu(ActionEvent event) throws IOException
-    {
-        URL location1 = ArtikelToevoegenFXController.class.getResource("ArtikelToevoegen.fxml");
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(location1);
-        fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
-        root = (Parent)(Node)fxmlLoader.load(location1.openStream());
-
-        ArtikelToevoegenFXController ctrl1 = (ArtikelToevoegenFXController) fxmlLoader.getController();  
-
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
-               
-        //show the stage
-        stage.showAndWait();
     }
 }

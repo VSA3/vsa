@@ -7,9 +7,6 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vsa.GUI.MainFXController">
-   <left>
-      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER" />
-   </left>
    <top>
       <MenuBar id="main_menubar" fx:id="main_menubar" BorderPane.alignment="CENTER">
          <menus>
@@ -26,8 +23,8 @@
             </Menu>
             <Menu id="artikelen_menu" fx:id="artikelen_menu" mnemonicParsing="false" text="Artikelen">
                <items>
-                  <MenuItem fx:id="artikelen_overzicht" mnemonicParsing="false" text="Artikelen Overzicht" />
-                  <MenuItem fx:id="artikelen_toevoegen" mnemonicParsing="false" text="Artikelen Toevoegen" />
+                  <MenuItem fx:id="artikelen_overzicht" mnemonicParsing="false" onAction="#openArtikelMenu" text="Artikelen Overzicht" />
+                  <MenuItem fx:id="artikelen_toevoegen" mnemonicParsing="false" onAction="#openArtikelToevoegenMenu" text="Artikelen Toevoegen" />
                   <MenuItem fx:id="artikelen_verwijderen" mnemonicParsing="false" text="Artikelen Verwijderen" />
                   <MenuItem fx:id="artikelen_artikelgroepen" mnemonicParsing="false" text="Artikelgroepen" />
                </items>
@@ -49,31 +46,11 @@
       </MenuBar>
    </top>
    <center>
-      <SplitPane dividerPositions="0.4" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
          <items>
-            <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0">
+            <SplitPane prefHeight="200.0" prefWidth="200.0">
                <items>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <ListView prefHeight="200.0" prefWidth="200.0" />
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <ListView prefHeight="200.0" prefWidth="200.0" />
-                     </children>
-                  </VBox>
-               </items>
-            </SplitPane>
-            <SplitPane dividerPositions="0.8" prefHeight="200.0" prefWidth="200.0">
-               <items>
-                  <ListView prefHeight="200.0" prefWidth="200.0" />
-                  <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="221.0" prefWidth="115.0">
-                     <children>
-                        <Separator prefWidth="200.0" />
-                        <Separator prefWidth="200.0" />
-                     </children>
-                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
                </items>
             </SplitPane>
          </items>
