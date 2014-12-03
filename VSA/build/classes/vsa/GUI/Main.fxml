@@ -32,7 +32,7 @@
             <Menu fx:id="namen_menu" mnemonicParsing="false" text="Namen">
                <items>
                   <MenuItem fx:id="namen_afleveradressen" mnemonicParsing="false" text="Afleveradressen" />
-                  <MenuItem fx:id="namen_debiteuren" mnemonicParsing="false" text="Debiteuren" />
+                  <MenuItem fx:id="namen_debiteuren" mnemonicParsing="false" onAction="#openDebiteurenOverzichtMenu" text="Debiteuren" />
                </items>
             </Menu>
             <Menu fx:id="orders_menu" mnemonicParsing="false" text="Orders">

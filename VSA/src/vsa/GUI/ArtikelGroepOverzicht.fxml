@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vsa.GUI.ArtikelGroepOverzichtFXController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <menus>
@@ -77,6 +77,7 @@
                   <Button mnemonicParsing="false" text="&lt;&lt;" />
                   <Button mnemonicParsing="false" text="&gt;&gt;" />
                   <Button mnemonicParsing="false" text="&gt;|" />
+                  <Button fx:id="listview_refresh" mnemonicParsing="false" onAction="#bindArtikelen" text="Refresh" />
               </items>
             </ToolBar>
             <GridPane>
@@ -98,11 +99,11 @@
                   <ComboBox prefWidth="150.0" promptText="Jaar en week (omgekeerd)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField GridPane.columnIndex="2" />
                   <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Wijzigen" GridPane.columnIndex="4" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Selecteren" GridPane.columnIndex="4" />
                   <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Sluiten" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                </children>
             </GridPane>
-            <TableView prefHeight="646.0" prefWidth="1280.0">
+            <TableView fx:id="tableview_artikelen_overzicht" prefHeight="648.0" prefWidth="1280.0">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />

@@ -9,9 +9,7 @@ package vsa.GUI;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import static javafx.application.ConditionalFeature.FXML;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,17 +17,24 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import vsa.domain.Administratie;
+import vsa.domain.Artikel;
+import vsa.enums.BTWCode;
 
 /**
  *
  * @author Michael
  */
-public class MainFXController implements Initializable
+public class DebiteurenToevoegenFXController implements Initializable
 {
     @FXML private MenuBar main_menubar;
     @FXML private Menu artikelen_menu;
@@ -56,6 +61,25 @@ public class MainFXController implements Initializable
     @FXML private MenuItem namen_debiteuren;
     
     @FXML private MenuItem orders_orders;
+    
+    @FXML private Text text_debiteur_nummer;
+    @FXML private Text text_debiteur_naam;
+    @FXML private Text text_debiteur_zoekcode;
+    
+    @FXML private Text text_debiteur_adres;
+    @FXML private Text text_debiteur_plaats;
+    @FXML private Text text_debiteur_telefoon;
+    
+    @FXML private TextField textfield_debiteur_nummer;
+    @FXML private TextField textfield_debiteur_naam;
+    @FXML private TextField textfield_debiteur_zoekcode;
+    @FXML private TextField textfield_debiteur_adres;
+    @FXML private TextField textfield_debiteur_postcode;
+    @FXML private TextField textfield_debiteur_plaats;
+    @FXML private TextField textfield_debiteur_telefoon1;
+    @FXML private TextField textfield_debiteur_telefoon2;
+
+    @FXML private Button button_artikelgroepoverzicht;
 
     private Parent root;
     private Scene scene;
@@ -68,72 +92,43 @@ public class MainFXController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) 
     {
-        
+
     }
     
     public void setData()
     {
         this.administratie = Administratie.getInstance();
+        this.textfield_debiteur_nummer.setText(this.voorGesteldDebiteurNummer()+"");
+    }
+        
+    public void debiteurToevoegen()
+    {
+
     }
     
-    public void openArtikelMenu(ActionEvent event) throws IOException
+    public int voorGesteldDebiteurNummer()
     {
-        URL location1 = ArtikelOverzichtFXController.class.getResource("ArtikelOverzicht.fxml");
+        int voorgesteldnummer = this.administratie.getDebiteuren().size() + 1;
+        return voorgesteldnummer;
+    }
+    
+    public void openArtikelGroepOverzicht(ActionEvent event) throws IOException
+    {
+        URL location1 = ArtikelGroepOverzichtFXController.class.getResource("ArtikelGroepOverzicht.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(location1);
         fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
         root = (Parent)(Node)fxmlLoader.load(location1.openStream());
 
-        ArtikelOverzichtFXController ctrl1 = (ArtikelOverzichtFXController) fxmlLoader.getController();
+        ArtikelGroepOverzichtFXController ctrl1 = (ArtikelGroepOverzichtFXController) fxmlLoader.getController();
         
         stage = new Stage();
         scene = new Scene(root);
         stage.setScene(scene);
-                     
-        //show the stage
-        stage.showAndWait();
-    }
-    
-    public void openArtikelToevoegenMenu(ActionEvent event) throws IOException
-    {
-        URL location1 = ArtikelToevoegenFXController.class.getResource("ArtikelToevoegen.fxml");
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(location1);
-        fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
-        root = (Parent)(Node)fxmlLoader.load(location1.openStream());
-
-        ArtikelToevoegenFXController ctrl1 = (ArtikelToevoegenFXController) fxmlLoader.getController();  
-
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
-               
+        
         ctrl1.setData();
-                
+               
         //show the stage
         stage.showAndWait();
-    }
-    
-    public void openDebiteurenOverzichtMenu(ActionEvent event) throws IOException
-    {
-        URL location1 = DebiteurenOverzichtFXController.class.getResource("DebiteurenOverzicht.fxml");
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(location1);
-        fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
-        root = (Parent)(Node)fxmlLoader.load(location1.openStream());
-
-        DebiteurenOverzichtFXController ctrl1 = (DebiteurenOverzichtFXController) fxmlLoader.getController();  
-
-        stage = new Stage();
-        scene = new Scene(root);
-        stage.setScene(scene);
-                
-        //show the stage
-        stage.showAndWait();
-    }
-    
-    public Administratie getAdministratie()
-    {
-        return this.administratie;
     }
 }

@@ -27,8 +27,9 @@ public class Debiteur
     private FacturatieGroep facturatiegroep;
     private ArrayList<Factuur> facturen;
     
-    public Debiteur(String naam, String plaats, String postcode, String adres, String telefoon1, int betalingstermijn)
+    public Debiteur(int nummer, String naam, String plaats, String postcode, String adres, String telefoon1, int betalingstermijn)
     {
+        this.nummer = nummer;
         this.naam = naam;
         this.plaats = plaats;
         this.postcode = postcode;
@@ -38,14 +39,34 @@ public class Debiteur
         this.debiteurnummeradministratie = nummer;
         facturen = new ArrayList();
     }
-    
-    public void setNummer(int nummer)
+        
+    public String getNaam()
     {
-        this.nummer = nummer;
+        return this.naam;
     }
     
     public int getNummer()
     {
         return this.nummer;
+    }
+    
+    public String getPlaats()
+    {
+        return this.plaats;
+    }
+    
+    public String getTelefoon1()
+    {
+        return this.telefoon1;
+    }
+    
+    public String getAdres()
+    {
+        return this.adres;
+    }   
+    
+    public String getZoekcode()
+    {
+        return this.zoekcode;
     }
 }

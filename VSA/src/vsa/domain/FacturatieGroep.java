@@ -21,17 +21,17 @@ public class FacturatieGroep
         this.nummer = nummer;
     }
     
-    public int facturatieNummer()
+    public int getNummer()
     {
         return this.nummer;
     }
     
-    public String facturatieNaam()
+    public String getNaam()
     {
         return this.naam;
     }
     
-    public String facturatieZoekCode()
+    public String getZoekcode()
     {
         return this.zoekcode;
     }

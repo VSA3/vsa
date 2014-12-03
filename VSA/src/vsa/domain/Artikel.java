@@ -6,10 +6,11 @@
 
 package vsa.domain;
 
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 import vsa.domain.Artikelgroep;
 import vsa.enums.BTWCode;
-import java.io.Serializable;
-import java.util.Date;
 
 /**
  *
@@ -21,15 +22,16 @@ public class Artikel implements Serializable
     private String omschrijving;
     private String korteomschrijving;
     private Artikelgroep artikelgroep;
-    private Date ingangsdatum;
-    private Date einddatum;
-    private int verkoopprijsincl;
-    private int verkoopprijsexcl;
+    private LocalDate ingangsdatum;
+    private LocalDate einddatum;
+    private double verkoopprijsincl;
+    private double verkoopprijsexcl;
     private BTWCode btwcode;
-    private String[] notities;
+    private String zoekcode;
+    private String notitie;
     
     public Artikel(int artikelnr, String omschrijving, String korteomschrijving, 
-            Artikelgroep artikelgroep, Date ingangsdatum, Date einddatum, int verkoopprijsincl, int verkoopprijsexcl, BTWCode btwcode, String[] notities)
+            Artikelgroep artikelgroep, LocalDate ingangsdatum, LocalDate einddatum, double verkoopprijsincl, double verkoopprijsexcl, BTWCode btwcode, String notities, String zoekcode)
     {
         this.artikelnr = artikelnr;
         this.omschrijving = omschrijving;
@@ -40,7 +42,8 @@ public class Artikel implements Serializable
         this.verkoopprijsexcl = verkoopprijsexcl;
         this.verkoopprijsincl = verkoopprijsincl;
         this.btwcode = btwcode;
-        this.notities = notities;
+        this.notitie = notitie;
+        this.zoekcode = zoekcode;
     }
     
     public void setArtikelnr(int artikelnr)
@@ -83,22 +86,22 @@ public class Artikel implements Serializable
         return this.artikelgroep;
     }
     
-    public void setIngangsdatum(Date ingangsdatum)
+    public void setIngangsdatum(LocalDate ingangsdatum)
     {
         this.ingangsdatum = ingangsdatum;
     }
     
-    public Date getIngangsdatum()
+    public LocalDate getIngangsdatum()
     {
         return this.ingangsdatum;
     }
     
-    public void setEinddatum(Date einddatum)
+    public void setEinddatum(LocalDate einddatum)
     {
         this.einddatum = einddatum;
     }
     
-    public Date getEinddatum()
+    public LocalDate getEinddatum()
     {
         return this.einddatum;
     }
@@ -108,7 +111,7 @@ public class Artikel implements Serializable
         this.verkoopprijsincl = verkoopprijsincl;
     }
     
-    public int getVerkoopprijsincl()
+    public double getVerkoopprijsincl()
     {
         return this.verkoopprijsincl;
     }
@@ -119,11 +122,11 @@ public class Artikel implements Serializable
     {
         if(btwcode == BTWCode.Hoog) 
         {
-            this.verkoopprijsexcl = (int)(this.verkoopprijsincl * 0.79);
+            this.verkoopprijsexcl = this.verkoopprijsincl * 0.79;
         }
         if(btwcode == BTWCode.Laag)
         {
-            this.verkoopprijsexcl = (int)(this.verkoopprijsincl * 0.94);
+            this.verkoopprijsexcl = this.verkoopprijsincl * 0.94;
         }
         if(btwcode == BTWCode.Nul)
         {
@@ -131,7 +134,7 @@ public class Artikel implements Serializable
         }
     }
     
-    public int getVerkoopprijsexcl()
+    public double getVerkoopprijsexcl()
     {
         return this.verkoopprijsexcl;
     }
@@ -146,13 +149,23 @@ public class Artikel implements Serializable
         return this.btwcode;
     }
     
-    public void setNotities(String[] notities)
+    public void setNotities(String notitie)
     {
-        this.notities = notities;
+        this.notitie = notitie;
     }
     
-    public String[] getNotities()
+    public String getNotitie()
     {
-        return this.notities;
+        return this.notitie;
     }   
+    
+    public String getZoekcode()
+    {
+        return this.zoekcode;
+    }
+    
+    public void setZoekcode(String zoekcode)
+    {
+        this.zoekcode = zoekcode;
+    }
 }
