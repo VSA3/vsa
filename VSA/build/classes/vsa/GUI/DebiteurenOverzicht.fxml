@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vsa.GUI.DebiteurenOverzichtFXController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <menus>
@@ -83,8 +83,8 @@
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="88.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="440.0" minWidth="0.0" prefWidth="152.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="727.0" minWidth="0.0" prefWidth="29.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1016.0" minWidth="0.0" prefWidth="466.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="727.0" minWidth="0.0" prefWidth="219.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1016.0" minWidth="0.0" prefWidth="276.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="1016.0" minWidth="10.0" prefWidth="546.0" />
               </columnConstraints>
               <rowConstraints>
@@ -98,14 +98,17 @@
                   <ComboBox prefWidth="150.0" promptText="Jaar en week (omgekeerd)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField GridPane.columnIndex="2" />
                   <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Selecteren" GridPane.columnIndex="4" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Sluiten" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Button fx:id="button_debiteurtoevoegen" mnemonicParsing="false" onAction="#openDebiteurToevoegenMenu" prefHeight="25.0" prefWidth="98.0" text="Wijzigen" GridPane.columnIndex="4" />
+                  <Button fx:id="button_sluiten" mnemonicParsing="false" onAction="#sluitenButtonAction" prefHeight="25.0" prefWidth="99.0" text="Sluiten" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                </children>
             </GridPane>
-            <TableView prefHeight="646.0" prefWidth="1280.0">
+            <TableView fx:id="tableview_debiteur_overzicht" prefHeight="646.0" prefWidth="1280.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="tablecolumn_debiteur_nummer" prefWidth="75.0" text="Nummer" />
+                <TableColumn fx:id="tablecolumn_debiteur_naam" prefWidth="75.0" text="Naam" />
+                  <TableColumn fx:id="tablecolumn_debiteur_plaats" prefWidth="75.0" text="Plaats" />
+                  <TableColumn fx:id="tablecolumn_debiteur_telefoon1" prefWidth="75.0" text="Telefoon 1" />
+                  <TableColumn fx:id="tablecolumn_debiteur_zoekcode" prefWidth="75.0" text="Zoekcode" />
               </columns>
             </TableView>
             <ToolBar prefHeight="19.0" prefWidth="1280.0">

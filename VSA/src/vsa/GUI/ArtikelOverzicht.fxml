@@ -99,7 +99,7 @@
                   <ComboBox prefWidth="150.0" promptText="Jaar en week (omgekeerd)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField GridPane.columnIndex="2" />
                   <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Selecteren" GridPane.columnIndex="4" />
+                  <Button fx:id="button_artikeldetails" mnemonicParsing="false" onAction="#openArtikelDetailsWindow" prefHeight="25.0" prefWidth="98.0" text="Selecteren" GridPane.columnIndex="4" />
                   <Button fx:id="button_sluiten" mnemonicParsing="false" onAction="#sluitenButtonAction" prefHeight="25.0" prefWidth="99.0" text="Sluiten" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                </children>
             </GridPane>
@@ -113,10 +113,10 @@
                </columns></TableView>
             <ToolBar prefHeight="19.0" prefWidth="1280.0">
                <items>
-                  <TextField promptText="DAG" text="DAG + GETAL" />
-                  <TextField text="MAAND" />
-                  <TextField text="WEEK + GETAL" />
-                  <TextField text="SYSTEEM TIJD" />
+                  <TextField fx:id="textfield_dag" disable="true" promptText="DAG" text="DAG + GETAL" />
+                  <TextField fx:id="textfield_maand" disable="true" text="MAAND" />
+                  <TextField fx:id="textfield_week" disable="true" text="WEEK + GETAL" />
+                  <TextField fx:id="textfield_systeemtijd" disable="true" text="SYSTEEM TIJD" />
                </items>
             </ToolBar>
          </children>

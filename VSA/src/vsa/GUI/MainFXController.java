@@ -9,9 +9,9 @@ package vsa.GUI;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import static javafx.application.ConditionalFeature.FXML;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -51,6 +51,7 @@ public class MainFXController implements Initializable
     @FXML private MenuItem artikelen_toevoegen;
     @FXML private MenuItem artikelen_verwijderen;
     @FXML private MenuItem artikelen_artikelgroepen;
+    @FXML private MenuItem artikelen_btwoverzicht;
     
     @FXML private MenuItem namen_afleveradressen;
     @FXML private MenuItem namen_debiteuren;
@@ -91,7 +92,7 @@ public class MainFXController implements Initializable
         stage.setScene(scene);
                      
         //show the stage
-        stage.showAndWait();
+        stage.show();
     }
     
     public void openArtikelToevoegenMenu(ActionEvent event) throws IOException
@@ -111,7 +112,27 @@ public class MainFXController implements Initializable
         ctrl1.setData();
                 
         //show the stage
-        stage.showAndWait();
+        stage.show();
+    }
+    
+    public void openArtikelGroepMenu(ActionEvent event) throws IOException
+    {
+        URL location1 = ArtikelGroepOverzichtFXController.class.getResource("ArtikelGroepOverzicht.fxml");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(location1);
+        fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
+        root = (Parent)(Node)fxmlLoader.load(location1.openStream());
+
+        ArtikelGroepOverzichtFXController ctrl1 = (ArtikelGroepOverzichtFXController) fxmlLoader.getController();  
+
+        stage = new Stage();
+        scene = new Scene(root);
+        stage.setScene(scene);
+               
+        ctrl1.setData();
+                
+        //show the stage
+        stage.show();
     }
     
     public void openDebiteurenOverzichtMenu(ActionEvent event) throws IOException
@@ -129,7 +150,30 @@ public class MainFXController implements Initializable
         stage.setScene(scene);
                 
         //show the stage
-        stage.showAndWait();
+        stage.show();
+    }
+    
+    public void openBTWOverzichtMenu(ActionEvent event)
+    {
+        URL location1 = BTWOverzichtFXController.class.getResource("BTWOverzicht.fxml");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(location1);
+        fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
+        try {
+            root = (Parent)(Node)fxmlLoader.load(location1.openStream());
+        } catch (IOException ex) {
+            Logger.getLogger(MainFXController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
+        }
+
+        BTWOverzichtFXController ctrl1 = (BTWOverzichtFXController) fxmlLoader.getController();  
+
+        stage = new Stage();
+        scene = new Scene(root);
+        stage.setScene(scene);
+                
+        //show the stage
+        stage.show();
     }
     
     public Administratie getAdministratie()

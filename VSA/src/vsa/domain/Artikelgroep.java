@@ -23,20 +23,29 @@ public class Artikelgroep implements Serializable
         this.nummer = nummer;
         this.naam = naam;
         this.zoekcode = zoekcode;
+    } 
+
+    public int getNummer() {
+        return nummer;
+    }
+
+    public String getNaam() {
+        return naam;
+    }
+
+    public String getZoekcode() {
+        return zoekcode;
     }
     
-    public int getNummer()
-    {
-        return this.nummer;
+    public void setNummer(int nummer) {
+        this.nummer = nummer;
     }
-    
-    public String getNaam()
-    {
-        return this.naam;
+
+    public void setNaam(String naam) {
+        this.naam = naam;
     }
-    
-    public String getZoekCode()
-    {
-        return this.zoekcode;
-    }   
+
+    public void setZoekcode(String zoekcode) {
+        this.zoekcode = zoekcode;
+    }
 }

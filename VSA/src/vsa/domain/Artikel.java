@@ -10,7 +10,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 import vsa.domain.Artikelgroep;
-import vsa.enums.BTWCode;
 
 /**
  *
@@ -26,12 +25,12 @@ public class Artikel implements Serializable
     private LocalDate einddatum;
     private double verkoopprijsincl;
     private double verkoopprijsexcl;
-    private BTWCode btwcode;
+    private BTW btw;
     private String zoekcode;
     private String notitie;
     
     public Artikel(int artikelnr, String omschrijving, String korteomschrijving, 
-            Artikelgroep artikelgroep, LocalDate ingangsdatum, LocalDate einddatum, double verkoopprijsincl, double verkoopprijsexcl, BTWCode btwcode, String notities, String zoekcode)
+            Artikelgroep artikelgroep, LocalDate ingangsdatum, LocalDate einddatum, double verkoopprijsincl, double verkoopprijsexcl, BTW btw, String notities, String zoekcode)
     {
         this.artikelnr = artikelnr;
         this.omschrijving = omschrijving;
@@ -41,7 +40,7 @@ public class Artikel implements Serializable
         this.einddatum = einddatum;
         this.verkoopprijsexcl = verkoopprijsexcl;
         this.verkoopprijsincl = verkoopprijsincl;
-        this.btwcode = btwcode;
+        this.btw = btw;
         this.notitie = notitie;
         this.zoekcode = zoekcode;
     }
@@ -120,18 +119,7 @@ public class Artikel implements Serializable
     //DEZE KRIJGT GEEN WAARDE MEE
     public void setVerkoopprijsexcl()
     {
-        if(btwcode == BTWCode.Hoog) 
-        {
-            this.verkoopprijsexcl = this.verkoopprijsincl * 0.79;
-        }
-        if(btwcode == BTWCode.Laag)
-        {
-            this.verkoopprijsexcl = this.verkoopprijsincl * 0.94;
-        }
-        if(btwcode == BTWCode.Nul)
-        {
-            this.verkoopprijsexcl = this.verkoopprijsincl;
-        }
+        
     }
     
     public double getVerkoopprijsexcl()
@@ -139,14 +127,14 @@ public class Artikel implements Serializable
         return this.verkoopprijsexcl;
     }
     
-    public void setBTWCode(BTWCode btwcode)
+    public void setBTW(BTW btw)
     {
-        this.btwcode = btwcode;
+        this.btw = btw;
     }
     
-    public BTWCode getBTWCode()
+    public BTW getBTW()
     {
-        return this.btwcode;
+        return this.btw;
     }
     
     public void setNotities(String notitie)
@@ -167,5 +155,11 @@ public class Artikel implements Serializable
     public void setZoekcode(String zoekcode)
     {
         this.zoekcode = zoekcode;
+    }
+    
+    @Override
+    public String toString()
+    {
+        return this.artikelnr + ": " + this.omschrijving;
     }
 }

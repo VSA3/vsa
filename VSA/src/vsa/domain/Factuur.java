@@ -21,6 +21,14 @@ public class Factuur implements Serializable
     //DEBITEUR
     private Debiteur debiteur;
     
+    //Vanuit de orders ga je een list van artikelen ophalen
+    //en vanuit die list kan er dan een prijs berekend worden
+    //dit gaat van maandag -> zondag
+    private ArrayList<Order> orders;
+    
+    //Is het nummer van de meegegeven debiteur
+    private int debiteurnummer;
+    
     //FACTUURSOORT
     private FactuurSoort factuursoort;
     
@@ -29,19 +37,5 @@ public class Factuur implements Serializable
     private Date factuurdatum;
     private double totaalbedrag;
     private Boolean afgedrukt;
-    private Boolean export;
-    private Boolean betaald;
-    private Boolean exportbmp;
-    
-    //INTERNE FACTUUR
-    private Date datum;
-    private Boolean interngefactureerd;
-    private Periode periode;
-    
-    //FACTUUR INFO
-    private ArrayList<Artikelgroep> artikelgroepen;
-    private double[] bedragen;
-    private String[] notitie;
-    private String[] winkelverkopen;
-    
+   
 }

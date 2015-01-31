@@ -26,7 +26,8 @@
                   <MenuItem fx:id="artikelen_overzicht" mnemonicParsing="false" onAction="#openArtikelMenu" text="Artikelen Overzicht" />
                   <MenuItem fx:id="artikelen_toevoegen" mnemonicParsing="false" onAction="#openArtikelToevoegenMenu" text="Artikelen Toevoegen" />
                   <MenuItem fx:id="artikelen_verwijderen" mnemonicParsing="false" text="Artikelen Verwijderen" />
-                  <MenuItem fx:id="artikelen_artikelgroepen" mnemonicParsing="false" text="Artikelgroepen" />
+                  <MenuItem fx:id="artikelen_artikelgroepen" mnemonicParsing="false" onAction="#openArtikelGroepMenu" text="Artikelgroepen" />
+                  <MenuItem fx:id="artikelen_btwoverzicht" mnemonicParsing="false" onAction="#openBTWOverzichtMenu" text="BTW Overzicht" />
                </items>
             </Menu>
             <Menu fx:id="namen_menu" mnemonicParsing="false" text="Namen">

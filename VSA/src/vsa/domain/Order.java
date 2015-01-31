@@ -7,8 +7,8 @@
 package vsa.domain;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
-import vsa.enums.HerkomstOrder;
 import vsa.enums.MutatieRegel;
 
 /**
@@ -17,33 +17,16 @@ import vsa.enums.MutatieRegel;
  */
 public class Order implements Serializable
 {
-    private int jaar;
+    private Calendar jaar;
+    private Calendar week;
     private int nummer;
-    private int week;
     private int levering;
-    private Afleveradres afleveradres;
     private String naam;
-    private Date startdatum;
-    private Date einddatum;
     private Factuur factuur;
     private String notities;
-    
-    //DAGEN
-    private Boolean maandag;
-    private Boolean dinsdag;
-    private Boolean woensdag;
-    private Boolean donderdag;
-    private Boolean vrijdag;
-    private Boolean zaterdag;
-    private Boolean zondag;
+    private Debiteur debiteur;
     
     //ARTIKELEN
     private Artikel[] artikelen;
     private MutatieRegel mutatieregel;
-    private HerkomstOrder herkomstorder;
-    
-    
-    
-    
-    
 }

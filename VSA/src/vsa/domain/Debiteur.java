@@ -22,14 +22,16 @@ public class Debiteur
     private String telefoon1;
     private String telefoon2;
     private String zoekcode;
+    private double percentagefactuurkorting;
     private int betalingstermijn;
     private int debiteurnummeradministratie;
     private FacturatieGroep facturatiegroep;
     private ArrayList<Factuur> facturen;
+    private ArrayList<Order> orders;
     
     public Debiteur(int nummer, String naam, String plaats, String postcode, String adres, String telefoon1, int betalingstermijn)
     {
-        this.nummer = nummer;
+        this. nummer = nummer;
         this.naam = naam;
         this.plaats = plaats;
         this.postcode = postcode;
@@ -38,6 +40,7 @@ public class Debiteur
         this.betalingstermijn = betalingstermijn;
         this.debiteurnummeradministratie = nummer;
         facturen = new ArrayList();
+        orders = new ArrayList();
     }
         
     public String getNaam()

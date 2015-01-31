@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vsa.GUI.ArtikelToevoegenFXController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vsa.GUI.ArtikelDetailsFXController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="735.0">
          <menus>
@@ -77,10 +77,9 @@
       <TextField fx:id="textfield_artikel_artikelgroep" layoutX="141.0" layoutY="175.0" prefHeight="25.0" prefWidth="31.0" />
       <Text layoutX="14.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Omschrijving" />
       <TextField fx:id="textfield_artikel_nummer" layoutX="141.0" layoutY="63.0" prefHeight="25.0" prefWidth="223.0" />
-      <Text fx:id="text_artikel_nummer" layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nummer" />
+      <Text layoutX="14.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nummer" />
       <Text layoutX="14.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Korte) Omschrijving" />
       <Text layoutX="14.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artikelgroep" />
-      <Button fx:id="button_artikelgroepoverzicht" layoutX="180.0" layoutY="175.0" mnemonicParsing="false" onAction="#openArtikelGroepOverzicht" prefHeight="25.0" prefWidth="66.0" text="Zoeken" />
       <TextField fx:id="textfield_artikel_artikelgroepzoeken" layoutX="253.0" layoutY="175.0" prefHeight="25.0" prefWidth="108.0" />
       <TabPane layoutX="3.0" layoutY="297.0" prefHeight="212.0" prefWidth="729.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -106,29 +105,22 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
-            <Tab text="Notitie">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TextArea fx:id="textarea_artikel_notitie" layoutX="7.0" layoutY="6.0" prefHeight="172.0" prefWidth="711.0" />
-                     </children>
-                  </AnchorPane>
-              </content>
-            </Tab>
         </tabs>
       </TabPane>
-      <Text layoutX="441.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BTW-Code" />
-      <RadioButton fx:id="radiobutton_artikel_nul" layoutX="515.0" layoutY="218.0" mnemonicParsing="false" text="Nul" />
-      <RadioButton fx:id="radiobutton_artikel_laag" layoutX="572.0" layoutY="218.0" mnemonicParsing="false" text="Laag" />
-      <RadioButton fx:id="radiobutton_artikel_hoog" layoutX="629.0" layoutY="218.0" mnemonicParsing="false" text="Hoog" />
       <DatePicker fx:id="datepicker_artikel_ingangsdatum" layoutX="541.0" layoutY="45.0" />
       <DatePicker fx:id="datepicker_artikel_einddatum" layoutX="541.0" layoutY="81.0" />
       <Text layoutX="442.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IngangsDatum" />
       <Text layoutX="441.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EindDatum" />
-      <TextField fx:id="textfield_artikel_verkoopprijsincl" disable="true" layoutX="541.0" layoutY="125.0" />
-      <TextField fx:id="textfield_artikel_verkoopprijsexcl" disable="true" layoutX="541.0" layoutY="163.0" />
-      <Text layoutX="442.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verkoopprijs Inc." />
-      <Text layoutX="442.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verkoopprijs Excl." />
-      <Button fx:id="button_artikeltoevoegen" layoutX="442.0" layoutY="257.0" mnemonicParsing="false" onAction="#artikelToevoegen" prefHeight="25.0" prefWidth="269.0" text="Toevoegen" />
+      <TextField fx:id="textfield_artikel_verkoopprijsincl" disable="true" layoutX="141.0" layoutY="219.0" prefHeight="25.0" prefWidth="223.0" />
+      <TextField fx:id="textfield_artikel_verkoopprijsexcl" disable="true" layoutX="141.0" layoutY="257.0" prefHeight="25.0" prefWidth="223.0" />
+      <Text layoutX="14.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verkoopprijs Inc." />
+      <Text layoutX="14.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verkoopprijs Excl." />
+      <Button fx:id="button_artikeltoevoegen" layoutX="442.0" layoutY="257.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="269.0" text="Aanpassen" />
+      <Text layoutX="440.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BTW Percentage" />
+      <TextField fx:id="textfield_artikel_btw_percentage" layoutX="539.0" layoutY="167.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="textfield_artikel_btw_naam" layoutX="539.0" layoutY="133.0" prefHeight="25.0" prefWidth="174.0" />
+      <Text layoutX="440.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BTW Naam" />
+      <Button layoutX="178.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" text="Zoeken" />
+      <ComboBox fx:id="combobox_btw_btwkiezen" layoutX="440.0" layoutY="207.0" prefHeight="25.0" prefWidth="269.0" />
    </children>
 </AnchorPane>
